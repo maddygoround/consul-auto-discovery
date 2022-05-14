@@ -1,8 +1,9 @@
 const fse = require("fs-extra");
 const net = require("net");
+const {join} = require('path');
 const uuid = require("uuid");
 const Handlebars = require("handlebars");
-const fileContent = fse.readFileSync("./sample.service").toString();
+const fileContent = fse.readFileSync(join(__dirname,"example.service")).toString();
 const template = Handlebars.compile(fileContent);
 
 const getNetworkIP = () => {
